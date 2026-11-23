@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sérum Vitamina C Pura | Aurora Cosmética</title>
+  <style>
+    :root { --bg: #fdfaf8; --card: #ffffff; --primary: #b86b52; --primary-dark: #944e38; --text: #2c2420; --muted: #6e6059; --accent: #f4e6df; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: var(--card); padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee2dc; position: sticky; top: 0; z-index: 10; flex-wrap: wrap; gap: 12px; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    nav a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover, nav a.active { color: var(--primary); }
+    .product-box { max-width: 920px; margin: 50px auto; background: var(--card); border-radius: 16px; padding: 36px; border: 1px solid #efe4de; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; align-items: center; }
+    .visual { background: linear-gradient(135deg, #f4e6df, #e8cfc3); border-radius: 14px; height: 320px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; color: var(--primary-dark); font-weight: 700; font-size: 1.3rem; }
+    .badge { background: var(--accent); color: var(--primary-dark); padding: 5px 12px; border-radius: 14px; font-size: 0.82rem; font-weight: 600; }
+    h1 { margin: 12px 0; font-size: 1.9rem; }
+    .price { font-size: 1.5rem; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
+    .desc { color: var(--muted); margin-bottom: 20px; }
+    ul { margin: 0 0 24px 20px; color: var(--text); }
+    ul li { margin-bottom: 6px; }
+    .qty-row { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+    input[type="number"] { width: 70px; padding: 8px; border: 1px solid #d8c6bd; border-radius: 8px; font-size: 1rem; }
+    .btn { background: var(--primary); color: #fff; border: none; padding: 14px 28px; border-radius: 28px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn:hover { background: var(--primary-dark); }
+    .msg { margin-top: 14px; color: #2e7d32; font-weight: 600; display: none; }
+    footer { text-align: center; padding: 28px; background: var(--accent); color: var(--muted); margin-top: 50px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Aurora Cosmética</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="produto-detalhe.html" class="active">Destaque</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main class="product-box">
+    <div class="visual">
+      Sérum Vitamina C Pura 15%<br>Frasco 30 ml
+    </div>
+    <div>
+      <span class="badge">Mais Vendido · Rosto</span>
+      <h1>Sérum Vitamina C Pura 15%</h1>
+      <div class="price">24,90 €</div>
+      <p class="desc">Fórmula concentrada com Vitamina C estabilizada, Ácido Ferúlico e Vitamina E para iluminar, firmar e proteger a pele no dia a dia.</p>
+      <ul>
+        <li>Testado dermatologicamente</li>
+        <li>Sem parabenos nem fragrâncias artificiais</li>
+        <li>Indicado para todos os tipos de pele</li>
+      </ul>
+      <div class="qty-row">
+        <label for="qtd"><strong>Quantidade:</strong></label>
+        <input type="number" id="qtd" value="1" min="1" max="10">
+      </div>
+      <button class="btn" onclick="adicionarCarrinho()">Adicionar à Encomenda</button>
+      <a href="contacto.html" class="btn" style="background:#2c2420; margin-left:8px;">Finalizar Pedido</a>
+      <p class="msg" id="confirmacao">Produto adicionado! Clique em "Finalizar Pedido" para concluir.</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 Aurora Cosmética · Beleza e Cuidados Naturais
+  </footer>
+
+  <script>
+    function adicionarCarrinho() {
+      const qtd = document.getElementById('qtd').value;
+      const msg = document.getElementById('confirmacao');
+      msg.textContent = qtd + ' unidade(s) adicionada(s) à encomenda!';
+      msg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

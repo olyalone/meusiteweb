@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Encomenda e Contacto | Aurora Cosmética</title>
+  <style>
+    :root { --bg: #fdfaf8; --card: #ffffff; --primary: #b86b52; --primary-dark: #944e38; --text: #2c2420; --muted: #6e6059; --accent: #f4e6df; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { background: var(--card); padding: 18px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee2dc; position: sticky; top: 0; z-index: 10; flex-wrap: wrap; gap: 12px; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+    nav a { margin-left: 20px; text-decoration: none; color: var(--text); font-weight: 500; }
+    nav a:hover, nav a.active { color: var(--primary); }
+    .wrapper { max-width: 820px; margin: 50px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card { background: var(--card); padding: 30px; border-radius: 14px; border: 1px solid #efe4de; }
+    h1, h2 { margin-bottom: 14px; }
+    p { color: var(--muted); margin-bottom: 14px; }
+    label { display: block; font-weight: 600; margin: 12px 0 6px; }
+    input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #d8c6bd; border-radius: 8px; font-size: 0.95rem; }
+    .btn { margin-top: 18px; width: 100%; background: var(--primary); color: #fff; border: none; padding: 13px; border-radius: 25px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .btn:hover { background: var(--primary-dark); }
+    .success { display: none; margin-top: 14px; padding: 12px; background: #e8f5e9; color: #2e7d32; border-radius: 8px; font-weight: 600; }
+    footer { text-align: center; padding: 28px; background: var(--accent); color: var(--muted); margin-top: 50px; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Aurora Cosmética</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="produto-detalhe.html">Destaque</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <div class="card">
+      <h1>Fazer Encomenda</h1>
+      <p>Preencha os seus dados e enviaremos a confirmação do pedido por e-mail ou WhatsApp.</p>
+      <form onsubmit="enviarPedido(event)">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" required placeholder="Ex: Maria Silva">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required placeholder="exemplo@email.com">
+
+        <label for="produto">Produto Escolhido</label>
+        <select id="produto">
+          <option>Sérum Vitamina C Pura 15% - 24,90 €</option>
+          <option>Creme Hidratante Ácido Hialurónico - 19,50 €</option>
+          <option>Óleo Reparador Capilar Argão - 21,00 €</option>
+          <option>Gel de Limpeza Suave Camomila - 14,50 €</option>
+        </select>
+
+        <label for="morada">Morada de Entrega / Observações</label>
+        <textarea id="morada" rows="3" required placeholder="Rua, Código Postal, Cidade..."></textarea>
+
+        <button type="submit" class="btn">Confirmar Encomenda</button>
+        <div class="success" id="msg-sucesso">Pedido enviado com sucesso! Entraremos em contacto em breve.</div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Atendimento ao Cliente</h2>
+      <p><strong>Horário:</strong> Segunda a Sexta, das 9h00 às 18h00</p>
+      <p><strong>E-mail:</strong> apoio@auroracosmetica.pt</p>
+      <p><strong>Telefone / WhatsApp:</strong> +351 910 000 000</p>
+      <p><strong>Envios:</strong> Entregas em 24h a 48h úteis para todo o país.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Aurora Cosmética · Beleza e Cuidados Naturais
+  </footer>
+
+  <script>
+    function enviarPedido(e) {
+      e.preventDefault();
+      document.getElementById('msg-sucesso').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
